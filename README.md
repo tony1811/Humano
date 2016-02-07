@@ -1,33 +1,67 @@
-#include<humano.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+bool fim = false;
 
 int main()
 {
-	int romulo,idade;
-	int tendencias_homossexuais;
-	int celular_travecos;
-	bool morte = false;
-	bool homossexual = false;
-
-	printf("nascimento: %i", romulo);
-	
-	whilhe(!morte)
-		{
-			for(idade=0;idade<=morte;idade++)
-				{
-					if(idade<=6)
-						normal;
-					else if(idade>6 && idade<=12)
-						tendencias_homossexuais;
-					else if(idade>12 && idade<=25)
-						celular_travecos;
-					else if(idade>25 && idade<40)
-					{
-						celular_travecos;
-						homossexual = true;
-					}
-					else if(idade=40)
-						morte = true;
-				}
-		}
-return 0;
+    int n,m,a,me,q;
+    char move; 
+    char e[] = "* ";
+    
+    int  matriz[5][5];
+    srand((unsigned) time(NULL));
+    a = (rand() % 14) + 1;
+    me = (rand() % 14) + 1;
+    
+    while(!fim)
+    {
+    for(n=0;n<=11;n++)
+    {
+        for(m=0;m<=16;m++)
+        {
+            if(n==11 && m==a)
+            {
+                printf("@");
+            }
+            else if(n==1 && m==me)
+            {
+                printf("%c", &e);
+            }
+            else if(n==0 || n==11)
+            {
+                printf("——");
+            }
+            else if(m==0 || m==16)
+            {
+                printf("|");
+            }
+            else
+            {
+            printf("  ");
+            }
+            
+        }
+        printf("\n");
+    }
+        
+    scanf("%i", &q);
+       
+        switch(q)
+        {
+            case 1:
+            fim = true;
+            break;
+           case 2:
+                system("clear");
+                me++;
+                break;
+            
+        }
+        
+    
+     }
+    
+    return 0; 
 }
